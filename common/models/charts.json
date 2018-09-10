@@ -1,0 +1,314 @@
+{
+  "name": "charts",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "from_date": {
+      "type": "date",
+      "required": true
+    },
+    "to_date": {
+      "type": "string",
+      "required": true
+    },
+    "last_week": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "getSources": {
+      "accepts": [
+        {
+          "arg": "from_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the from date",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "to_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the to date",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "pie_charts_details",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "get the json of chart",
+      "http": [
+        {
+          "path": "/getSources",
+          "verb": "get"
+        }
+      ]
+    },
+    "getSourcesTrend": {
+      "accepts": [
+        {
+          "arg": "last_week",
+          "type": "string",
+          "required": true,
+          "description": "enter the last no of weeks",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "sparkline_charts_details",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "get the json of chart",
+      "http": [
+        {
+          "path": "/getSourcesTrend",
+          "verb": "get"
+        }
+      ]
+    },
+    "getPumpsYield": {
+      "accepts": [
+        {
+          "arg": "from_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the from date",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "to_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the to date",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "gantt_charts_details",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "get the json of chart",
+      "http": [
+        {
+          "path": "/getPumpsYield",
+          "verb": "get"
+        }
+      ]
+    },
+    "getWaterDemand": {
+      "accepts": [
+        {
+          "arg": "from_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the from date",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "to_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the to date",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "usage_charts_details",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "get the json of chart",
+      "http": [
+        {
+          "path": "/getWaterDemand",
+          "verb": "get"
+        }
+      ]
+    },
+    "getBlockLevel": {
+      "accepts": [
+        {
+          "arg": "from_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the from date",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "to_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the to date",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "tree_map_details",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "get the json of chart",
+      "http": [
+        {
+          "path": "/getBlockLevel",
+          "verb": "get"
+        }
+      ]
+    },
+    "getHighUsers": {
+      "accepts": [
+        {
+          "arg": "from_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the from date",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "to_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the to date",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "bubble_charts_details",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "get the json of chart",
+      "http": [
+        {
+          "path": "/getHighUsers",
+          "verb": "get"
+        }
+      ]
+    },
+    "getWaterMapHeatMap": {
+      "accepts": [
+        {
+          "arg": "from_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the from date",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "to_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the to date",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "heatmap_charts_details",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "get the json of heat map",
+      "http": [
+        {
+          "path": "/getWaterMapHeatMap",
+          "verb": "get"
+        }
+      ]
+    },
+    "getWaterMapHistogram": {
+      "accepts": [
+        {
+          "arg": "from_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the from date",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "to_date",
+          "type": "string",
+          "required": true,
+          "description": "enter the to date",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "histogram_charts_details",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "get the json of chart",
+      "http": [
+        {
+          "path": "/getWaterMapHistogram",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}
