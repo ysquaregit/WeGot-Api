@@ -56,7 +56,7 @@ module.exports = function (Charts) {
     }
 
     /* Get the Json of Pumps Yield / Gantt-Charts */
-    Charts.getPumpsYieldValidation = function (from_date, to_date, callback) {
+    Charts.getPumpsYieldValidation = function (date, callback) {
         var url = "https://api.myjson.com/bins/i8y0w"
         request({
             url: url,
@@ -69,16 +69,16 @@ module.exports = function (Charts) {
                     temp.x2 = Math.floor(Math.random() * 18);
                     temp.yieldValue = Math.floor(Math.random() * 389);
                     temp.yieldPercentage = Math.floor(Math.random() * 268);
-                    temp.partialFill = (Math.floor(Math.random() * 3)+5)/ 9;
+                    temp.partialFill = (Math.floor(Math.random() * 3) + 5) / 9;
                 }
                 console.log(body);
                 callback(error, body);
             }
         })
     }
-    Charts.getPumpsYield = function (from_date, to_date, callback) {
+    Charts.getPumpsYield = function (date, callback) {
         var self = this;
-        self.getPumpsYieldValidation(from_date, to_date, callback);
+        self.getPumpsYieldValidation(date, callback);
     }
 
 

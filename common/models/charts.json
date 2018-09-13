@@ -14,6 +14,10 @@
       "type": "string",
       "required": true
     },
+    "date": {
+      "type": "string",
+      "required": true
+    },
     "last_week": {
       "type": "string",
       "required": true
@@ -91,19 +95,10 @@
     "getPumpsYield": {
       "accepts": [
         {
-          "arg": "from_date",
+          "arg": "date",
           "type": "string",
           "required": true,
-          "description": "enter the from date",
-          "http": {
-            "source": "query"
-          }
-        },
-        {
-          "arg": "to_date",
-          "type": "string",
-          "required": true,
-          "description": "enter the to date",
+          "description": "enter the date",
           "http": {
             "source": "query"
           }
